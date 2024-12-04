@@ -2,7 +2,7 @@ import { Plugin } from "obsidian";
 
 export default class HideMouseCursorPlugin extends Plugin {
     onload() {
-        console.log("HideCursorPlugin loaded.");
+        console.log("Hide Cursor Plugin loaded.");
 
         const editorContainer = document.body;
 
@@ -24,6 +24,6 @@ export default class HideMouseCursorPlugin extends Plugin {
     }
 
     onunload() {
-        console.log("HideCursorPlugin unloaded.");
+        console.log("Hide Cursor Plugin unloaded.");
     }
 }
