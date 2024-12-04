@@ -2,7 +2,7 @@ import { Plugin } from "obsidian";
 
 export default class HideMouseCursorPlugin extends Plugin {
     onload() {
-        console.log("Hide Cursor Plugin loaded.");
+        console.log("HideMouseCursorPlugin loaded.");
 
         const editorContainer = document.body;
 
@@ -10,8 +10,12 @@ export default class HideMouseCursorPlugin extends Plugin {
             editorContainer.style.cursor = "auto";
         };
 
-        const handleKeydown = () => {
-            editorContainer.style.cursor = "none";
+        const handleKeydown = (event: KeyboardEvent) => {
+            const excludedKeys = ["Control", "Backspace", "Alt", "Meta", "Shift", "CapsLock", "Tab", "Escape"];
+            // 排除特殊键和组合键
+            if (!excludedKeys.includes(event.key) && !event.ctrlKey && !event.altKey && !event.metaKey) {
+                editorContainer.style.cursor = "none";
+            }
         };
 
         document.addEventListener("mousemove", handleMouseMove);
@@ -24,6 +28,6 @@ export default class HideMouseCursorPlugin extends Plugin {
     }
 
     onunload() {
-        console.log("Hide Cursor Plugin unloaded.");
+        console.log("HideMouseCursorPlugin unloaded.");
     }
 }
