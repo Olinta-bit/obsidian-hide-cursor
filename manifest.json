@@ -1,0 +1,10 @@
+{
+	"id": "hide-cursor",
+	"name": "Hide Cursor",
+	"version": "1.0.0",
+	"minAppVersion": "0.12.0",
+	"description": "Hides the mouse cursor while typing and shows it when the mouse moves.",
+	"author": "Olinta",
+	"authorUrl": "https://github.com/Olinta-bit/obsidian-hide-cursor",
+	"isDesktopOnly": false
+}
